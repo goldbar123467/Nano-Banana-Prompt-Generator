@@ -1,3 +1,4 @@
+import os
 import gradio as gr
 from huggingface_hub import InferenceClient
 
@@ -521,7 +522,7 @@ def generate_prompt(concept: str, camera: str) -> str:
         return "Please enter a concept for your nano banana scene."
 
     try:
-        client = InferenceClient()
+        client = InferenceClient(token=os.environ.get("HF_TOKEN"))
 
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -603,4 +604,4 @@ with gr.Blocks() as app:
 
 # Launch the app
 if __name__ == "__main__":
-    app.launch(css=CUSTOM_CSS, theme=gr.themes.Base(), share=True)
+    app.launch(css=CUSTOM_CSS, theme=gr.themes.Base())
