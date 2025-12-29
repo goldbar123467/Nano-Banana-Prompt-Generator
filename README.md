@@ -1,14 +1,3 @@
----
-title: Nano Banana Prompt Generator
-emoji: 🍌
-colorFrom: yellow
-colorTo: yellow
-sdk: gradio
-sdk_version: 5.9.1
-app_file: app.py
-pinned: false
----
-
 # Kyzlo Prompting
 
 **The photography director in your pocket.**
