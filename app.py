@@ -543,7 +543,7 @@ def generate_prompt(concept: str, camera: str) -> str:
 
 
 # Build the Gradio interface
-with gr.Blocks() as app:
+with gr.Blocks(css=CUSTOM_CSS, theme=gr.themes.Base()) as app:
     with gr.Column(elem_classes="main-container"):
         # Header
         gr.HTML("""
@@ -604,4 +604,4 @@ with gr.Blocks() as app:
 
 # Launch the app
 if __name__ == "__main__":
-    app.launch(css=CUSTOM_CSS, theme=gr.themes.Base())
+    app.launch()
